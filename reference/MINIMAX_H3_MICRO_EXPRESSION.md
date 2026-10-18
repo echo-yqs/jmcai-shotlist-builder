@@ -14,6 +14,8 @@ The JMCAI Shotlist Builder remains authoritative for:
 
 Use this reference only to compile the acting layer inside an already approved shot window. Ignore the source skill's standalone defaults of six seconds, one close-up, one continuous shot, Chinese-only prose, mode recommendation, and final-prompt delivery.
 
+For the cross-platform performance **process** that precedes this score — the establish → trigger → resist → leak → bridge → land arc, the 1–10 intensity scale, the external-task lock, wave-with-recovery, and the relationship-eyeline anchor — see [EMOTION_PROCESS_DIRECTION.md](EMOTION_PROCESS_DIRECTION.md). That charter governs how the emotion unfolds; this reference compiles the shot-local score.
+
 ## 2. Trigger and skip rules
 
 Compile a `MICRO_PERFORMANCE_SCORE` when all of these are true:

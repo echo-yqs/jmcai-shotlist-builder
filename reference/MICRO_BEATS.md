@@ -2,6 +2,8 @@
 
 **Never leave a generic emotion in a prompt.** Every emotional direction must decompose into specific muscle movements, breath, eyes, and skin. This is the single biggest difference between a Seedance prompt that produces "AI video" and one that produces a performance.
 
+> For the overall performance **process** — establish → trigger → resist → leak → bridge → land, the 1–10 intensity scale, external-task lock, wave-with-recovery, and eyeline anchor — see [EMOTION_PROCESS_DIRECTION.md](EMOTION_PROCESS_DIRECTION.md). This file is the muscle-level decomposition; the ready-to-use per-emotion cue catalog is [EMOTION_CUE_LIBRARY.md](EMOTION_CUE_LIBRARY.md).
+
 ## 1. The base rule
 
 When the user (or the script) says "the character looks [generic emotion]" — stop. Decompose it. If you can't decompose it confidently, ask the user to choose a variant.
@@ -180,6 +182,7 @@ Three characters never sync perfectly — always stagger by 0.3–0.5 sec.
 - ❌ Tears by default — only if the script explicitly calls for them
 - ❌ Perfect synchronization across multiple characters — always stagger timing
 - ❌ Generic "looks tense" / "looks happy" — always decompose into muscles, breath, eyes
+- ❌ Vague pause-time phrases standing in for visible action — "停了半拍", "几秒后", "停留一拍", "停顿了两秒". Name the observable change instead (muscle, breath, gaze, posture). Explicit shot and dialogue time windows are a separate timing matter and remain valid.
 
 ## 7. The anti-AI test
 

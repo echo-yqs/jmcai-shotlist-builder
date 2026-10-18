@@ -68,9 +68,47 @@
   ```text
   Play the scene with intense, quiet dramatic gravity. Every actor exhibits subtle physical tension: clenched jaw, restrained breathing, and piercing direct eye contact. No relaxed or neutral drifting.
   ```
+- **表演层细目**：突然变脸 / 表情冻结 / 表演夸张 / 只哭不笑 / 只笑不泪 / 情绪直线上升 / 情绪一来就停任务等失败模式与改法，见 [EMOTION_PROCESS_DIRECTION.md](EMOTION_PROCESS_DIRECTION.md) §10。
 
 ### 翻车 5：多镜头快切时画面混乱狂晃（Messy random cuts）
 - **修复咒语**：
   ```text
   Maintain strict 180-degree axis continuity. The camera remains strictly on the west side of the characters. Every cut lands cleanly on a decisive glance or physical impact.
   ```
+
+---
+
+## 四、 打斗 / 技能特效失败诊断（单变量排错）
+
+用户拿翻车结果回来 → **每轮只改一类变量**，改完复测再定下一步。物理层细节见 `COMBAT_FX_ANCHOR_SYSTEM.md`。
+
+| 症状 | 真因 | 修法 |
+| :--- | :--- | :--- |
+| 技能位置太低 / 贴地 | 没写高度与视角 | 补「悬于**百米高空画面左上方**」+「**仰视视角**」 |
+| 出来的是实体（火龙 / 龙）而非流体 | 主体没带材质词 | 「巨型火龙」→「巨型龙形**火焰流体**」 |
+| 技能从人物身前乱冒 | 锚点没写或位置写错 | 明确「锚点锁定**掌心**」「自**身后**浮现」 |
+| 没有打击感 | 缺物理反馈 | 补「坍塌 + 碎石飞射 + **不规则形状**」 |
+| 特效很假 / 像贴图 | 缺光效与环境氛围词 | 补体积光 / 环境漫射 / 自发光（可加 `volumetric fog`） |
+| 双人镜头"低智"、两人没距离感 | 没写景别构图 | 补「两人位于画面两端相距百米」+「对角构图：一人在左下地面，一人在右上角」 |
+| 人物与背景割裂、细节差 | 缺多视图 | 补四视图转身参考图（见 `PROMPT_TEMPLATE_ASSET_EXPANSION.md`） |
+| 蓄力幅度不够 | 动作没写起手 | 补「抬手再向前伸出」 |
+| 语病导致的偏差 | 用词不当 | 「不规则雷球」→「**不规则的形状**」 |
+| H3 出现自由漂浮的光束 / 常驻光环 | 能量被当成装饰 | 能量只从**接触点爆发**；写实街战纯物理（灰尘 / 碎屑 / 闷哼） |
+| 偶发异常（模型抽风） | **不是提示词问题** | **直接再生成一遍**，别改提示词 |
+
+> **判据：失败是提示词问题，不是模型问题**——先查这张表，再考虑重生成。
+
+---
+
+## 五、 打斗特效的收尾与污染词硬约束
+
+**结尾三不写**：不写「缓缓收势」「光芒渐熄」「镜头缓缓拉远」；不写定格摆姿势；不写"渐隐"式收尾。→ 改成：**最后一击 + 结果爆发 + 空间位置**。
+
+**负向约束（默认都加）**：不要字幕 / 不要 BGM / 不要水印 / 不要 Logo / 不要可读文字。
+
+**跨题材污染词（按题材排除）**：
+- 武侠 / 仙侠禁：机甲、警笛、赛博、霓虹广告
+- 现代街战禁：灵气、法力、御剑、阵纹
+- 机甲禁：刀气、掌法、内力
+
+> 提示词层预防见本表；物理层细节见 `COMBAT_FX_ANCHOR_SYSTEM.md`，词库见 `COMBAT_FX_VOCABULARY.md`。

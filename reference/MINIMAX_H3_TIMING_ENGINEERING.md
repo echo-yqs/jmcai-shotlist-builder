@@ -2,6 +2,8 @@
 
 本文件定义 H3 分支的拆分、时长预算与校核方法。它解决的不是“如何把台词切得更碎”，而是如何让每个独立 `H3_UNIT` 有完整的动作、表演呼吸和可剪辑的头尾。长剧本先按 [MINIMAX_H3_LONG_SCRIPT_UNITS.md](MINIMAX_H3_LONG_SCRIPT_UNITS.md) 建立全文单元蓝图，再在这里校核每段真实承载量。
 
+> 本文件是 H3 时序数值的**单一真源**：语速、有效台词字数预算、头/尾稳定把手与时序校核阈值一律以本文件为准。其他文件（`MINIMAX_H3_LONG_SCRIPT_UNITS.md` §4、README §三、SKILL）只作摘要并指向本文件；发现数值冲突时先改本文件，再同步其余引用。
+
 ## 一、先做时间预算，再决定片段边界
 
 在写任何 H3 提示词前，先按 [MINIMAX_H3_SCENE_GROUNDING_AND_RUNTIME.md](MINIMAX_H3_SCENE_GROUNDING_AND_RUNTIME.md) 提取剧本/用户声明的全片时长，建立逐场 `RUNTIME_BUDGET`；再按 [MINIMAX_H3_SOURCE_COVERAGE.md](MINIMAX_H3_SOURCE_COVERAGE.md) 建立原剧本 `SOURCE_BEATS` 与连续道具 `PROP_STATE_CHAIN`，同时计算口播承载量和可见动作承载量。为每句可听见的中文计算：
@@ -14,7 +16,7 @@
 
 `口播秒数 = 可听见汉字数 ÷ 语速`
 
-`镜头秒数 = 口播秒数 + 0.3–0.5 秒开场建立 + 0.3–0.8 秒收束/反应 + 独立片段需要的剪辑余量`
+`镜头秒数 = 口播秒数 + 0.5 秒稳定头部把手（含开场建立与开口前预备，可与之交叠）+ 0.8–1.0 秒稳定尾部把手（含收束、反应与余韵）+ 独立片段需要的额外剪辑余量`
 
 另行计算：
 

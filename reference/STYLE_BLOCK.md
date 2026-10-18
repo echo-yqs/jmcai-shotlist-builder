@@ -1,6 +1,8 @@
 # Default Style Block
 
-This Chinese style paragraph is appended to **every** prompt unless the user uploads a custom style override. Drop it in verbatim, then layer the scene-type-specific lighting clause on top.
+**Scope — Seedance 2.0 / 2.5 only.** This Chinese style paragraph is appended to every **Seedance** prompt unless the user uploads a custom style override. Drop it in verbatim, then layer the scene-type-specific lighting clause on top.
+
+**Do not append this block to MiniMax H3 prompts as-is.** Several of its clauses directly violate [MINIMAX_H3_DIRECTORIAL_NATURAL_LANGUAGE.md](MINIMAX_H3_DIRECTORIAL_NATURAL_LANGUAGE.md) §零 and [MINIMAX_H3_CINEMATIC_RHYTHM.md](MINIMAX_H3_CINEMATIC_RHYTHM.md): H3 forbids auto-injecting photographer names, `8K IMAX`, fixed color grading, a fixed lens family, and a fixed shadow-side camera. For H3, take lighting only from the scene's real, explainable sources and follow §"MiniMax H3 exclusions" below.
 
 ## Universal lighting rules (always present)
 
@@ -51,6 +53,17 @@ State the proportion explicitly in the prompt, e.g.:
 风格：8K IMAX。超写实——禁3D渲染，禁游戏引擎，禁游戏CG过场质感。摄影：Emmanuel Lubezki × Roger Deakins。灯光：⚠️严格仅使用场景内实际存在的光源（practicals）。禁止一切电影补光——禁正面光、禁侧面补光、禁顶光、禁底光、禁反光板、禁柔光箱、禁LED灯带、禁霓虹、禁任何画面外光源。摄影机始终在人物的阴影侧（shadow side）拍摄。全程大气薄雾haze——禁止可见光束（god rays）。色彩：60:30:10——主色/辅色/点缀色。镜头：物理电影镜头。180°快门运动模糊。皮肤：毛孔级写实——汗毛、不对称痣、毛细血管潮红、毛孔阴影匹配现场光源。表演：好莱坞级——反应前微停顿、精准视线、湿润活眼带眼神光、可见呼吸和胸腔起伏。物理：重力惯性真实——质量有真实重量、正确接触阴影。禁漂浮道具。构图：三分法+黄金比例。每人从第一帧开始运动。连续性：角色、道具、环境每个镜头完全一致。禁身份漂移。技术：60fps流畅运动。8K细节。禁抖动（除手持呼吸感）。音频：仅环境SFX。禁音乐。禁字幕。
 ```
 
+## MiniMax H3 exclusions
+
+For MiniMax H3, do **not** serialize the following from the canonical block; they are Seedance house-style defaults, not H3 rules:
+
+- photographer names (`Emmanuel Lubezki × Roger Deakins`) and `8K IMAX` — H3 must not auto-inject photographer or resolution branding;
+- a fixed "always shoot from the shadow side" camera rule — H3 chooses the side from the scene's true light path;
+- the blanket `禁音乐` clause — H3 follows the score policy: `音乐：无配乐。` only when the user prohibits score, otherwise a concrete cue;
+- a fixed `21:9` footer — H3 uses the declared aspect ratio and carries no `15秒。21:9。` footer (see the aspect-ratio note below).
+
+H3 lighting still obeys: only real, explainable in-scene sources, and no artificial film fill. Replace the canonical block's fixed clauses with scene-grounded lighting inside the Chinese `角色与场景` / `镜头设计` and the English `detailed_description`.
+
 ## Scene-type lighting variants
 
 Layer these specific clauses into the lighting section above based on the scene:
@@ -91,7 +104,7 @@ For multi-shot prompts (one prompt with internal `【镜头1】【镜头2】【�
 
 ## Aspect ratio override
 
-If user specifies a different aspect ratio (e.g., 9:16 for shorts, 4:3 for retro), swap `21:9` in the footer.
+The `21:9` footer is a Seedance default. If the user specifies a different aspect ratio (e.g., `9:16` for vertical short drama, `4:3` for retro), swap it in the footer. **Vertical short drama (抖音／快手／红果) defaults to `9:16`** and must be composed for vertical framing — do not build a horizontal composition and crop it. The MiniMax H3 branch records the declared aspect ratio instead of a hardcoded footer and carries no `15秒。21:9。` footer.
 
 ## Camera/composition rule (append for wide shots)
 

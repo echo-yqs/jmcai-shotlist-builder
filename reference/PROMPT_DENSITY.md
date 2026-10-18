@@ -55,7 +55,7 @@ For each Chinese vocal event:
 2. Count audible Han characters; punctuation is excluded from the character count.
 3. Use 4.0–4.5 characters per second for ordinary dialogue unless the user sets another rate; default to 4.25. Use 2.5–3.0 characters per second for slow emotional voice-over, suppressed monologue, or memory narration; default to 3.0.
 4. Compute `speech_time = character_count / rate`.
-5. Add 0.3–0.5 seconds to establish the shot and 0.3–0.8 seconds for the post-line hold, listener reaction, action residue, camera transition, and environmental afterglow.
+5. Add 0.5 seconds of stable head handle (the pre-line prep may overlap it) and 0.8–1.0 seconds of stable tail handle for the post-line hold, listener reaction, action residue, camera transition, and environmental afterglow. Numeric authority: [MINIMAX_H3_TIMING_ENGINEERING.md](MINIMAX_H3_TIMING_ENGINEERING.md) §一/§二.
 
 Keep this calculation in the shotlist timing notes. In the copyable H3 prompt, use the resulting start/end window and natural punctuation holds; never instruct a performer to speak at a numeric characters-per-second rate.
 
