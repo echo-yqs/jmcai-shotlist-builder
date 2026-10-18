@@ -1,9 +1,9 @@
 # JMCAI Shotlist Builder (电影级工业分镜与视觉工单构建系统)
 
-[![Version](https://img.shields.io/badge/version-2.0.0--release-blue.svg)](file:///c:/Users/cdall/Downloads/土豆/SKILL2.0基础款/jmcai-shotlist-builder)
-[![Python](https://img.shields.io/badge/python-3.10%2B-green.svg)](file:///c:/Users/cdall/Downloads/土豆/SKILL2.0基础款/jmcai-shotlist-builder)
-[![Engines](https://img.shields.io/badge/engines-MiniMax%20H3%20%7C%20Seedance%202.5%20%7C%20Kling%203.0-purple.svg)](file:///c:/Users/cdall/Downloads/土豆/SKILL2.0基础款/jmcai-shotlist-builder)
-[![License](https://img.shields.io/badge/license-Proprietary-orange.svg)](file:///c:/Users/cdall/Downloads/土豆/SKILL2.0基础款/jmcai-shotlist-builder)
+[![Version](https://img.shields.io/badge/version-2.0.0--release-blue.svg)](https://github.com/echo-yqs/jmcai-shotlist-builder)
+[![Python](https://img.shields.io/badge/python-3.10%2B-green.svg)](https://github.com/echo-yqs/jmcai-shotlist-builder)
+[![Engines](https://img.shields.io/badge/engines-MiniMax%20H3%20%7C%20Seedance%202.5%20%7C%20Kling%203.0-purple.svg)](https://github.com/echo-yqs/jmcai-shotlist-builder)
+[![License](https://img.shields.io/badge/license-Proprietary-orange.svg)](https://github.com/echo-yqs/jmcai-shotlist-builder)
 
 > **JMCAI Shotlist Builder** 是面向 AI 电影、商业短剧与高品质生成式视听内容创作的**工业级视听分镜拆解、全模态资产台账规划与离线自包含 HTML 生产工单构建系统**。
 > 本系统深度打通 **MiniMax H3（海螺视频）**、**ByteDance Seedance 2.0 / 2.5** 与 **快手可灵 Kling 3.0 / 2.6** 三大主流视频大模型，建立了一套严格的电影学视听工程标准，彻底解决 AI 视频制作中“口型漂移、多镜头人物穿帮、道具自动复原、大模型语法割裂、运镜无动机、操作员上传错位”等工业化落地痛点。
@@ -263,6 +263,7 @@ uv run python scripts/h3_upload_order_lint.py <工单文件名>.html
 | | `DRAMATURGY_MONTAGE_LAW.md` | 蒙太奇视听剪辑律与镜头接切因果链 |
 | | `SPATIAL_BLOCKING.md` | 空间走位调度、180度轴线与俯视 SVG 设计 |
 | | `HELL_GRIND_ADAPTATION.md` | 极限磨镜与表演校准体系（目标-阻碍-策略-行为残余） |
+| | `PLAN_TYPES.md` | 镜头规划缩写 (shot-plan abbreviations) 与共享镜头类型定义 |
 | **ByteDance Seedance** | `SEEDANCE_25_PRODUCTION_SPEC.md` | Seedance 2.5 四种括号官方语法、30s运镜与50-Slot规范 |
 | | `PROMPT_DENSITY.md` | 提示词密度与词频权重分配规范 |
 | | `PROMPT_PATTERNS.md` | 经典镜头运镜模式与时空推演范式 |
@@ -270,14 +271,21 @@ uv run python scripts/h3_upload_order_lint.py <工单文件名>.html
 | | `MICRO_BEATS.md` | 毫秒级微节拍调度法 |
 | **快手可灵 Kling** | `KLING_PROMPT_CONTRACT.md` | 可灵 3.0 五层结构契约、主体锚定与 P1-P4 对白协议 |
 | **MiniMax H3 长剧集** | `MINIMAX_H3_LONG_SCRIPT_UNITS.md` | 10–15 秒黄金叙事单元切分与长剧集全流程蓝图 |
+| | `MINIMAX_H3_SCENE_GROUNDING_AND_RUNTIME.md` | 文档权威映射 (DOCUMENT_AUTHORITY_MAP)、场次真值与总时长校准 |
+| | `MINIMAX_H3_SOURCE_COVERAGE.md` | 原子剧本节拍 (SOURCE_BEATS) 与反复道具状态链 (PROP_STATE_CHAIN) |
 | | `MINIMAX_H3_CHINESE_MACHINE_PROMPT_SPEC.md`| 中文执行六段式规范（主体/摘要/保留/详述/音响/音乐） |
 | | `MINIMAX_H3_DUAL_PROMPT_CONTRACT.md` | 中英文双模态提示词逐字台词绝对对齐契约 |
+| | `MINIMAX_H3_FULL_REFERENCE_EN.md` | 英文六段式 Ref2VA 规范字段、保留关系、台词标签与音频字段 |
 | | `MINIMAX_H3_AUDIO_REFERENCE_BINDING.md` | 音频参考槽位绑定规则与声线复用机制 |
 | | `MINIMAX_H3_ACTOR_DIALOGUE_CRAFT.md` | 演员对白与口型时序工艺（防吞字与抢画） |
+| | `MINIMAX_H3_EMOTION_PERFORMANCE.md` | 人声表演与反"念台词"指导（情绪表演基线） |
 | | `MINIMAX_H3_MICRO_EXPRESSION.md` | 演员微表情泄漏律与微表演谱（假面与极性锁定） |
 | | `MINIMAX_H3_TIMING_ENGINEERING.md` | 毫秒级切点与时序工程（Shot 1/Shot N 时间戳语法） |
+| | `MINIMAX_H3_DIRECTORIAL_NATURAL_LANGUAGE.md` | 导演意图、镜头评分 (SHOT_SCORE)、构图、焦点、切点与表演序列化 |
+| | `MINIMAX_H3_CINEMATIC_RHYTHM.md` | 情绪节奏图 (EMOTIONAL_RHYTHM_MAP)、视听节拍、配乐决策与余像审计 |
 | | `MINIMAX_H3_ROUTING.md` | I2VA / FL2VA / L2VA / Ref2VA 四大生成模式智能路由 |
 | | `MINIMAX_H3_PLATFORM_LIMITS.md` | 官方 9 图 + 3 视频 + 3 音频上限与降级策略 |
+| | `MINIMAX_H3_BASE_EN.md` | 官方 H3 内部基线参考（时间轴/关键帧/摄影机/对白/声音），非中文输出外壳 |
 | | `MINIMAX_H3_CROSS_CLIP_EDIT_CONTINUITY.md`| 跨片段剪辑连续性与首尾帧接戏规范 |
 | **资产与防穿帮工程** | `PROMPT_TEMPLATE_ASSET_EXPANSION.md` | 神颜立绘三大工程铁律与横向 16:9 生产四视图模板 |
 | | `VIDEO_CONTINUITY_FIXES_CHECKLIST.md` | 14 项跨镜头连续性防穿帮终素质检与 5 套急救卡 |
@@ -291,11 +299,14 @@ uv run python scripts/h3_upload_order_lint.py <工单文件名>.html
 将本项目直接克隆或解压至你的技能目录（`skills/`）下即可：
 
 ```bash
-# 进入你的 skills 目录并克隆本仓库
-git clone https://github.com/allen-Jmc/jmcai-shotlist-builder.git
+# 进入你的 skills 目录并克隆本仓库（GitHub 直连）
+git clone https://github.com/echo-yqs/jmcai-shotlist-builder
+
+# 若国内直连 github.com 不稳定，改用加速镜像：
+git clone https://hk.gh-proxy.org/https://github.com/echo-yqs/jmcai-shotlist-builder.git
 ```
 
-> **说明**：也可以直接下载 [Release ZIP 压缩包](https://github.com/allen-Jmc/jmcai-shotlist-builder) 并解压到 `skills/` 目录下（保持文件夹名称为 `jmcai-shotlist-builder`）。
+> **说明**：也可以直接下载 [Release ZIP 压缩包](https://github.com/echo-yqs/jmcai-shotlist-builder) 并解压到 `skills/` 目录下（保持文件夹名称为 `jmcai-shotlist-builder`）。
 
 ---
 
